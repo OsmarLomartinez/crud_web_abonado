@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD de Abonados</title>
+</head>
+<body>
+  <h1>Listado de Abonados</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Nombre completo</th><th>Documento</th><th>Dirección</th><th>Filial</th>
+    </tr>
+    {% for a in abonados %}
+    <tr>
+      <td>{{ a[0] }}</td>
+      <td>{{ a[3] }} {{ a[4] }} {{ a[1] }} {{ a[2] }}</td>
+      <td>{{ a[5] }}</td>
+      <td>{{ a[6] }}</td>
+      <td>{{ a[7] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Agregar nuevo abonado</h2>
+  <form method="post" action="/insertar">
+    <input name="paterno" placeholder="Apellido paterno"><br>
+    <input name="materno" placeholder="Apellido materno"><br>
+    <input name="pnombre" placeholder="Primer nombre"><br>
+    <input name="snombre" placeholder="Segundo nombre"><br>
+    <input name="numdoc" placeholder="Número de documento"><br>
+    <input name="numcasa" placeholder="Dirección (NumCasa)"><br>
+    <input name="idfilial" placeholder="ID de filial"><br>
+    <button type="submit">Insertar</button>
+  </form>
+</body>
+</html>
